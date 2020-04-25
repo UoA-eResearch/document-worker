@@ -2,7 +2,7 @@ FROM python:3.8-slim-buster
 
 RUN mkdir -p /app/templates
 
-RUN apt-get update && apt-get install -qq -y wget
+RUN apt-get update && apt-get install -qq -y wget build-essential python3-dev python3-pip python3-setuptools python3-wheel python3-cffi libcairo2 libpango-1.0-0 libpangocairo-1.0-0 libgdk-pixbuf2.0-0 libffi-dev shared-mime-info
 
 RUN wget --quiet https://github.com/wkhtmltopdf/wkhtmltopdf/releases/download/0.12.5/wkhtmltox_0.12.5-1.buster_amd64.deb && \
     apt-get -qy install ./wkhtmltox_0.12.5-1.buster_amd64.deb && \
